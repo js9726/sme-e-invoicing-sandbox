@@ -1,0 +1,125 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f6f4;
+  --foreground: #18201d;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+.input {
+  min-height: 38px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #cfd8d3;
+  background: #ffffff;
+  padding: 0.5rem 0.6rem;
+  color: #18201d;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #16725d;
+  box-shadow: 0 0 0 3px rgba(22, 114, 93, 0.14);
+}
+
+.field-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1rem;
+  text-transform: uppercase;
+  color: #61716a;
+}
+
+.template-card {
+  min-height: 110px;
+  border-radius: 6px;
+  border: 1px solid #cfd8d3;
+  background: #ffffff;
+  padding: 1rem;
+  text-align: left;
+  color: #18201d;
+  transition:
+    background 140ms ease,
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+
+.template-card:hover {
+  border-color: #8aa198;
+  background: #f6faf8;
+}
+
+.template-card-active {
+  border-color: #0f5f4d;
+  background: #ecf6f2;
+  box-shadow: 0 0 0 3px rgba(15, 95, 77, 0.12);
+}
+
+.button-primary,
+.button-secondary,
+.button-quiet {
+  min-height: 38px;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-weight: 650;
+  transition:
+    background 140ms ease,
+    border-color 140ms ease,
+    color 140ms ease;
+}
+
+.button-primary {
+  border: 1px solid #0f5f4d;
+  background: #0f5f4d;
+  color: #ffffff;
+}
+
+.button-primary:hover {
+  background: #0a4c3d;
+}
+
+.button-secondary {
+  border: 1px solid #cfd8d3;
+  background: #ffffff;
+  color: #1d2a26;
+}
+
+.button-secondary:hover {
+  border-color: #8aa198;
+  background: #edf4f1;
+}
+
+.button-quiet {
+  border: 1px solid #e3c6c1;
+  background: #fff7f6;
+  color: #8b2d28;
+}
+
+.button-quiet:hover {
+  background: #ffe1df;
+}
