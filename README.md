@@ -1,5 +1,7 @@
 # Malaysia SME E-Invoicing Sandbox
 
+[![CI](https://github.com/js9726/sme-e-invoicing-sandbox/actions/workflows/ci.yml/badge.svg)](https://github.com/js9726/sme-e-invoicing-sandbox/actions/workflows/ci.yml)
+
 Local MyInvois-style payload builder for Malaysian SME invoice workflows.
 
 This is a resume project, not a live tax integration. It validates common SME
@@ -39,8 +41,17 @@ schema-thinking and workflow demo, not as official MyInvois SDK output.
 npm ci
 npm run dev -- --port 3037
 npm run lint
+npm test          # Vitest unit suite over the pure lib/ domain modules
 npm run build
 ```
+
+## Architecture
+
+Domain logic lives in framework-free modules under `lib/` (`types`, `money`,
+`validate`, `payload`, `templates`, `parse`) with Vitest coverage in
+`lib/__tests__/`. `app/page.tsx` is UI-only and imports from `lib/`; the same
+`lib/` modules are reused by the companion `myinvois-mcp` server. CI
+(`.github/workflows/ci.yml`) runs lint, tests, and build on every push/PR.
 
 ## Current Local URL
 
